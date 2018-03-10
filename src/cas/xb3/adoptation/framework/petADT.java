@@ -11,8 +11,9 @@ public class petADT {
 	private final String primaryColour;
 	private final String secondaryColour;
 	private final String species;
+	private final String status;
 	
-	public petADT(String id, String sex, String yearsAge, String monthsAge, String primaryBreed, String secondaryBreed, String primaryColour, String secondaryColour, String species) {
+	public petADT(String id, String sex, String yearsAge, String monthsAge, String primaryBreed, String secondaryBreed, String primaryColour, String secondaryColour, String species, String status) {
 		this.ID = id;
 		this.sex = sex;
 		this.yearsAge = yearsAge;
@@ -22,6 +23,7 @@ public class petADT {
 		this.primaryColour = primaryColour;
 		this.secondaryColour = secondaryColour;
 		this.species = species;
+		this.status = status;
 	}
 	public String getID() {
 		return this.ID;
@@ -57,6 +59,10 @@ public class petADT {
 	
 	public String getSpecies() {
 		return this.species;
+	}
+	
+	public String getStatus() {
+		return this.status;
 	}
 
 }
