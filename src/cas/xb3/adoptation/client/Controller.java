@@ -19,6 +19,13 @@ public class Controller implements Initializable {
 		System.out.println(selectedSearch.getText());
 	}
 	
+	/**
+	 * Wrapper method for graphing alg./personality test
+	 */
+	public void onMatchTestClick() {
+		
+	}
+	
 	
 
 }
