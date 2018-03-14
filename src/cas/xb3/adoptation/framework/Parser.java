@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Parser {
 	
-	public static void parse(String s) throws IOException {
+	public static ArrayList<petADT> parse(String s) throws IOException {
 		String csvFile = s;
 		String line;
 		ArrayList<petADT> pets = new ArrayList<petADT>();
@@ -26,7 +26,7 @@ public class Parser {
 //			System.out.println(petObject.getSpecies());
 //		}
 						
-		
+		return pets;
 	}
 	
 	//for testing

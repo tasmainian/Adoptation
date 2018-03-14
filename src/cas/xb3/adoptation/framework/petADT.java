@@ -2,16 +2,17 @@ package cas.xb3.adoptation.framework;
 
 public class petADT {
 	
-	private final String ID;
-	private final String sex;
-	private final String yearsAge;
-	private final String monthsAge;
-	private final String primaryBreed;
-	private final String secondaryBreed;
-	private final String primaryColour;
-	private final String secondaryColour;
-	private final String species;
-	private final String status;
+	// state variables, cannot be final due to client implementation requirements
+	private String ID;
+	private String sex;
+	private String yearsAge;
+	private String monthsAge;
+	private String primaryBreed;
+	private String secondaryBreed;
+	private String primaryColour;
+	private String secondaryColour;
+	private String species;
+	private String status;
 	
 	public petADT(String id, String sex, String yearsAge, String monthsAge, String primaryBreed, String secondaryBreed, String primaryColour, String secondaryColour, String species, String status) {
 		this.ID = id;
@@ -25,44 +26,46 @@ public class petADT {
 		this.species = species;
 		this.status = status;
 	}
+
 	public String getID() {
-		return this.ID;
+		return ID;
 	}
-	
-	public String getGender() {
-		return this.sex;
+
+	public String getSex() {
+		return sex;
 	}
-	
+
 	public String getYearsAge() {
-		return this.yearsAge;
+		return yearsAge;
 	}
-	
+
 	public String getMonthsAge() {
-		return this.monthsAge;
+		return monthsAge;
 	}
-	
+
 	public String getPrimaryBreed() {
-		return this.primaryBreed;
+		return primaryBreed;
 	}
-	
+
 	public String getSecondaryBreed() {
-		return this.secondaryBreed;
+		return secondaryBreed;
 	}
-	
+
 	public String getPrimaryColour() {
-		return this.primaryColour;
+		return primaryColour;
 	}
-	
+
 	public String getSecondaryColour() {
-		return this.secondaryColour;
+		return secondaryColour;
 	}
-	
+
 	public String getSpecies() {
-		return this.species;
+		return species;
 	}
-	
+
 	public String getStatus() {
-		return this.status;
+		return status;
 	}
+
 
 }

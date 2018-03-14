@@ -17,11 +17,6 @@
                     <MenuItem mnemonicParsing="false" text="Close" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                   <items>
                     <MenuItem mnemonicParsing="false" text="About" />
@@ -37,7 +32,7 @@
                            <children>
                               <TextField prefHeight="27.0" prefWidth="150.0" />
                               <Button defaultButton="true" mnemonicParsing="false" text="Search" />
-                              <Button layoutX="214.0" layoutY="10.0" mnemonicParsing="false" text="Sort" />
+                              <Button fx:id="btnSort" layoutX="214.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBtnSortClick" text="Sort" />
                            </children>
                         </HBox>
                         <HBox spacing="5.0">
@@ -96,9 +91,9 @@
       </HBox>
    </bottom>
    <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="petView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="Breed" />
+          <TableColumn fx:id="breedCol" prefWidth="75.0" text="Breed" />
           <TableColumn prefWidth="75.0" text="Gender" />
             <TableColumn prefWidth="75.0" text="Age" />
             <TableColumn prefWidth="75.0" text="Color" />
