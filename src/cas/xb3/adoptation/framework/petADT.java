@@ -66,6 +66,10 @@ public class petADT {
 	public String getStatus() {
 		return status;
 	}
+	
+	public int compareTo(petADT that){
+		return (this.getPrimaryBreed().compareTo(that.getPrimaryBreed());
+	}
 
 
 }
