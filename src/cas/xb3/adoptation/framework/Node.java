@@ -2,6 +2,8 @@
  * @author Tasmiha Hassan
  * @date March 15, 2018
  */
+package cas.xb3.adoptation.framework;
+
 public class Node {
 	public String text; //Holds the questions/answer - parent
     public Node left; //leftYes - left child

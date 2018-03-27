@@ -68,7 +68,7 @@ public class petADT {
 	}
 	
 	public int compareTo(petADT that){
-		return (this.getPrimaryBreed().compareTo(that.getPrimaryBreed());
+		return (this.getPrimaryBreed().compareTo(that.getPrimaryBreed()));
 	}
 
 
