@@ -16,7 +16,7 @@ public class Parser {
 		while ((line = br.readLine()) != null) {
 			line = line.replace("\"", "");
 			String[] cols = line.split(",");
-			petADT pet = new petADT(cols[0],cols[2], cols[3],cols[4], cols[10], cols[11], cols[7], cols[8],cols[1], cols[14]);
+			petADT pet = new petADT(cols[0],cols[2], cols[3],cols[4], cols[10], cols[11], cols[7], cols[8],cols[1], cols[14], cols[9]);
 			pets.add(pet);	
 		}  
 		
