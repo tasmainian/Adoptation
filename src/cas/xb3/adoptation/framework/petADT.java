@@ -13,8 +13,9 @@ public class petADT {
 	private String secondaryColour;
 	private String species;
 	private String status;
+	private String breedGroup;
 	
-	public petADT(String id, String sex, String yearsAge, String monthsAge, String primaryBreed, String secondaryBreed, String primaryColour, String secondaryColour, String species, String status) {
+	public petADT(String id, String sex, String yearsAge, String monthsAge, String primaryBreed, String secondaryBreed, String primaryColour, String secondaryColour, String species, String status, String breedGroup) {
 		this.ID = id;
 		this.sex = sex;
 		this.yearsAge = yearsAge;
@@ -25,6 +26,7 @@ public class petADT {
 		this.secondaryColour = secondaryColour;
 		this.species = species;
 		this.status = status;
+		this.breedGroup = breedGroup;
 	}
 
 	public String getID() {
@@ -69,6 +71,13 @@ public class petADT {
 	
 	public int compareTo(petADT that){
 		return (this.getPrimaryBreed().compareTo(that.getPrimaryBreed()));
+<<<<<<< HEAD
+=======
+	}
+	
+	public String getBreedGroup() {
+		return breedGroup;
+>>>>>>> 50b9e41fef68d2b2e5d3f6e3d5167f53481cd234
 	}
 
 
