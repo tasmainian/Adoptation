@@ -42,26 +42,26 @@ public class Tree {
         if (root.left == null && root.right == null) { 
 			System.out.print(root.text);
 			if ((root.text).equals("You're a Type A personality, big dogs are a best fit for you")){
-				String[] list = {"Mastiff", "Sheepdog", "Sighthound"};
+				String[] list = {"MASTIFF", "SHEEPDOG", "SIGHTHOUND"};
 				setList(list);
 			}
 			else if ((root.text).equals("You're a Type B personality, mid sized dogs are a best fit for you")){
-				String[] list = {"Collie", "Hounds", "Mix", "Pointer", "Setter/Retrieve"};
+				String[] list = {"COLLIE", "HOUNDS", "MIX", "POINTER", "SETTER/RETRIEVE"};
 				setList(list);}
 			else if ((root.text).equals("You're a Type C personality, small dogs are a best fit for you")){
-				String[] list = {"Poodle", "Spaniel", "Spitz", "Terrier", "Toy"};
+				String[] list = {"POODLE", "SPANIEL", "SPITZ", "TERRIER", "TOY"};
 				setList(list);}
 			else if ((root.text).equals("You're a Type D personality, hybrid cats are a best fit for you")){
-				String[] list = {"Mix"};
+				String[] list = {"MIX"};
 				setList(list);}
 			else if ((root.text).equals("You're a Type E personality, domestic cats are a best fit for you")){
-				String[] list = {"Mix"};
+				String[] list = {"MIX"};
 				setList(list);}
 			else if ((root.text).equals("You're a Type F personality, short hair/ hairless cats are a best fit for you")){
-				String[] list = {"Shorthair"};
+				String[] list = {"SHORTHAIR"};
 				setList(list);}
 			else if ((root.text).equals("You're a Type E personality, long hair cats are a best fit for you")){
-				String[] list = {"Longhair"};
+				String[] list = {"LONGHAIR"};
 				setList(list);}
 		} else { //print out the question with (y/n)?
 			System.out.print(root.text);

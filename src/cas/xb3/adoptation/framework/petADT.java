@@ -71,13 +71,10 @@ public class petADT {
 	
 	public int compareTo(petADT that){
 		return (this.getPrimaryBreed().compareTo(that.getPrimaryBreed()));
-<<<<<<< HEAD
-=======
 	}
 	
 	public String getBreedGroup() {
 		return breedGroup;
->>>>>>> 50b9e41fef68d2b2e5d3f6e3d5167f53481cd234
 	}
 
 
