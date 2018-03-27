@@ -39,6 +39,6 @@ public class MainQ {
          questions.ask();
          System.out.println();
      }
-     //System.out.println(questions.list);
+     System.out.println(Arrays.toString(questions.getList()));
     }
 }
