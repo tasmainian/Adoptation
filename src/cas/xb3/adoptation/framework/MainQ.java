@@ -53,6 +53,7 @@ public class MainQ {
      }
      //System.out.println(Arrays.toString(petsBreeds));
      heapSort.sortHeap(petsBreeds);
+     PetHeapSort.sortHeap(pets);
      
      BufferedWriter outputWriter = null;
      outputWriter = new BufferedWriter(new FileWriter("indices.txt"));
@@ -109,11 +110,15 @@ public class MainQ {
 //    	 }
 //     }
      
-     System.out.println(Arrays.toString(petIndex.toArray()));
+//     System.out.println(Arrays.toString(petIndex.toArray()));
      
-//    for (int k : petIndex) {
-//    	System.out.println(petIndex.get(k));
-//    }
+    for (int k =0; k< petIndex.size(); k++) {
+    	int ind = petIndex.get(k);
+    	//System.out.println(ind);
+    	petADT urmom = pets.get(ind);
+    	System.out.println("Species: " + urmom.getSpecies() + " Breed: " + urmom.getBreedGroup() + " Age: " + urmom.getYearsAge());
+    	
+    }
     
 //    for(int i =0; i< petIndex.size(); i++){
 //    	System.out.println(petIndex.get(i));
