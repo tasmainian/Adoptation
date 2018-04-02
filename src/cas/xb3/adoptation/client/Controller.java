@@ -57,7 +57,7 @@ public class Controller {
 		ageCol.setCellValueFactory(new PropertyValueFactory<petADT, String>("yearsAge"));
 		colorCol.setCellValueFactory(new PropertyValueFactory<petADT, String>("primaryColour"));
 		
-		//petView.setSortPolicy(FXCollections.sort(oPetData)); <= change to our own sorting methods
+		
 		petView.setItems(oPetData);
 		
 	}
