@@ -14,6 +14,7 @@ public class petADT {
 	private String species;
 	private String status;
 	private String breedGroup;
+	private int count;
 	
 	public petADT(String id, String sex, String yearsAge, String monthsAge, String primaryBreed, String secondaryBreed, String primaryColour, String secondaryColour, String species, String status, String breedGroup) {
 		this.ID = id;
@@ -75,6 +76,14 @@ public class petADT {
 	
 	public String getBreedGroup() {
 		return this.breedGroup;
+	}
+	
+	public int getCount() {
+		return this.count;
+	}
+	
+	public void setCount(int c) {
+		this.count = c;
 	}
 
 
