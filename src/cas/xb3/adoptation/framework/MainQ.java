@@ -44,17 +44,31 @@ public class MainQ {
      System.out.println();
      System.out.println(Arrays.toString(questions.getList()));
      
-     ArrayList<petADT> pets = Parser.parse("data/Animal_Tag_DATA_2015_8.csv");
-     System.out.println(pets.size());
      
+     //****************************ALGORITHMS IMPLEMENTATION***********************
+     ArrayList<petADT> pets = Parser.parse("data/Animal_Tag_DATA_2015_8.csv");
+     //System.out.println(pets.size());
+     
+     //Loads all the pet breeds onto a string array
      String[] petsBreeds = new String[pets.size()];
+     String[] petsPrimaryBreed = new String[pets.size()];
+
      for (int i = 0; i < pets.size(); i++){
     	 petsBreeds[i] = pets.get(i).getBreedGroup();
+    	 petsPrimaryBreed[i] = pets.get(i).getPrimaryBreed();
+
      }
      //System.out.println(Arrays.toString(petsBreeds));
+     
+     //SORTS THE PET BREEDs ALPHBATICALLY
      heapSort.sortHeap(petsBreeds);
+     
+     //Sorts the ADT in the same order as the pet breeds
      PetHeapSort.sortHeap(pets);
      
+     
+     //Testing the outputs to see if it works
+     /*
      BufferedWriter outputWriter = null;
      outputWriter = new BufferedWriter(new FileWriter("data/indices.txt"));
      for (String s : petsBreeds) {
@@ -63,67 +77,36 @@ public class MainQ {
     	 //System.out.println(s);
      }
      outputWriter.flush();  
-     outputWriter.close();
+     outputWriter.close();*/
      
+     //Obtains the list of results from the questionnaire
      String[] petResults = questions.getList();
 
-	 ArrayList<Integer> petIndex = new ArrayList<Integer>();
+     //idk
+     ArrayList<Integer> petIndex = new ArrayList<Integer>();
 	 String[] temp = petsBreeds;
     // int[] petIndex;
      //int count = 0;
-//	 System.out.println("bdaskjdhkjas");
-//	 System.out.println(petsBreeds[103457]);
-
 	 
+	 
+	 //Finds the first to last repetitive breed in the list
 	 for (String s: petResults) {
 		 int lowBound = BinarySearch.lower_bound(temp, s);
 		 int highBound = BinarySearch.upper_bound(temp, s);
 		 
+		 //Finds all the index of all the breeds
 		 for (int i = lowBound; i<highBound; i++) {
 			 petIndex.add(i);
-			 //System.out.println(x);
 		 }
 	 }
-	 
-	 
-	 
-	 
-	 
-//     for (int i = 0; i < petResults.length; i++){
-//    	 //temp = petsBreeds;
-//    	 while(BinarySearch.binarySearch(temp, petResults[i]) != -1){
-//    		 
-//			 int index = Arrays.binarySearch (temp, petResults[i]);
-//			 int first = index;
-//			 int last = index;
-//			 if (index >= 0) {
-//			     while (first > 0 && temp[first-1] == petResults[i])
-//			         first--;
-//			     while (last < temp.length - 1 && temp[last+1] == petResults[i])
-//			    	 last++;
-//			 }
-//    		 
-//    		  petIndex.add(BinarySearch.binarySearch(temp, petResults[i]));
-////    		  //petIndex[count] = BinarySearch.binarySearch(petsBreeds, petResults[i]);
-////	       	  //count++;
-//	       	  temp[BinarySearch.binarySearch(temp, petResults[i])] = "found";
-//    	 }
-//     }
-     
-//     System.out.println(Arrays.toString(petIndex.toArray()));
      
     for (int k =0; k< petIndex.size(); k++) {
     	int ind = petIndex.get(k);
     	//System.out.println(ind);
-    	petADT urmom = pets.get(ind);
-    	System.out.println("Species: " + urmom.getSpecies() + " Breed: " + urmom.getBreedGroup() + " Age: " + urmom.getYearsAge());
+    	petADT petOptions = pets.get(ind);
+    	System.out.println("Species: " + petOptions.getSpecies() + " Breed: " + petOptions.getBreedGroup() + " Age: " + petOptions.getYearsAge());
     	
     }
     
-//    for(int i =0; i< petIndex.size(); i++){
-//    	System.out.println(petIndex.get(i));
-//    }
-
-//    System.out.println(petsBreeds[103457]);
     }
 }
