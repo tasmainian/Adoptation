@@ -95,10 +95,11 @@ public class MainQ {
 				petIndex.add(i);
 			}
 		}
-
+		ArrayList<petADT> primBreed = new ArrayList<petADT>();
 		for (int k = 0; k < petIndex.size(); k++) {
 			int ind = petIndex.get(k);
 			// System.out.println(ind);
+			primBreed.add(pets.get(ind));
 			petADT petOptions = pets.get(ind);
 			// System.out.println("Species: " + petOptions.getSpecies() + " Breed: " +
 			// petOptions.getPrimaryBreed() + " Age: " + petOptions.getYearsAge());
@@ -108,7 +109,6 @@ public class MainQ {
 		ArrayList<petADT> petsNew = pets;
 		PetHeapSortPrimary.sortHeap(petsNew);
 		
-		ArrayList<petADT> saad = new ArrayList<petADT>();
 		//System.out.println(Arrays.toString(petsNew.toArray()));
 		
 
@@ -124,14 +124,42 @@ public class MainQ {
 			// petCount.add(highBound-lowBound);
 			for (int i = lowBound; i < highBound; i++) {
 				petsNew.get(i).setCount(highBound - lowBound);
-				saad.add(pets.get(i));
+				//saad.add(pets.get(i));
 			}
 		}
 		
-//		for (petADT urmom : saad) {
-//			System.out.println(urmom.getBreedGroup());
-//		}
-		System.out.println(saad.get(0).getBreedGroup());
+		for (petADT urmom : primBreed) {
+			//System.out.println(urmom.getBreedGroup());
+		}
+		
+		PetHeapSortPrimary.sortHeap(primBreed);
+		
+		for (petADT s : primBreed) {
+			System.out.println(s.getPrimaryBreed());
+		}
+		
+		String[] finalBreeds = new String[primBreed.size()];
+		for (int i = 0; i<finalBreeds.length; i++) {
+			finalBreeds[i]=primBreed.get(i).getPrimaryBreed();
+		}
+		List asList = Arrays.asList(finalBreeds);
+		
+		ArrayList<finalPetADT> tas= new ArrayList<finalPetADT>();
+		
+		Set<String> mySet = new HashSet<String>(asList);
+		for(String s: mySet){
+
+			//System.out.println(s + " " + Collections.frequency(asList,s));
+			finalPetADT finalpetshit = new finalPetADT(s,Collections.frequency(asList,s));
+			tas.add(finalpetshit);
+		}
+		
+		finalPetADTHeapSort.sortHeap(tas);
+		Collections.reverse(tas);
+		for(int i = 0; i < 3; i++) {
+			System.out.println("Breed: " + tas.get(i).getPrimBreed() + " Count: " + tas.get(i).getCount());
+		}
+		//System.out.println(saad.get(0).getBreedGroup());
 		
 		
 		//System.out.println(petsNew.get(104000).getBreedGroup()+" " + petsNew.get(104000).getPrimaryBreed() +": Count =" + petsNew.get(104000).getCount());

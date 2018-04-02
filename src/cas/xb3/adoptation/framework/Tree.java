@@ -60,7 +60,7 @@ public class Tree {
 			else if ((root.text).equals("You're a Type F personality, short hair/ hairless cats are a best fit for you")){
 				String[] list = {"SHORTHAIR"};
 				setList(list);}
-			else if ((root.text).equals("You're a Type E personality, long hair cats are a best fit for you")){
+			else if ((root.text).equals("You're a Type G personality, long hair cats are a best fit for you")){
 				String[] list = {"LONGHAIR"};
 				setList(list);}
 		} else { //print out the question with (y/n)?
