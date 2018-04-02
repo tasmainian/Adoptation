@@ -30,43 +30,43 @@ public class petADT {
 	}
 
 	public String getID() {
-		return ID;
+		return this.ID;
 	}
 
 	public String getSex() {
-		return sex;
+		return this.sex;
 	}
 
 	public String getYearsAge() {
-		return yearsAge;
+		return this.yearsAge;
 	}
 
 	public String getMonthsAge() {
-		return monthsAge;
+		return this.monthsAge;
 	}
 
 	public String getPrimaryBreed() {
-		return primaryBreed;
+		return this.primaryBreed;
 	}
 
 	public String getSecondaryBreed() {
-		return secondaryBreed;
+		return this.secondaryBreed;
 	}
 
 	public String getPrimaryColour() {
-		return primaryColour;
+		return this.primaryColour;
 	}
 
 	public String getSecondaryColour() {
-		return secondaryColour;
+		return this.secondaryColour;
 	}
 
 	public String getSpecies() {
-		return species;
+		return this.species;
 	}
 
 	public String getStatus() {
-		return status;
+		return this.status;
 	}
 	
 	public int compareTo(petADT that){
@@ -74,7 +74,7 @@ public class petADT {
 	}
 	
 	public String getBreedGroup() {
-		return breedGroup;
+		return this.breedGroup;
 	}
 
 

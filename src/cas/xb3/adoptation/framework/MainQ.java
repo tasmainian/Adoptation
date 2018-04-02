@@ -4,7 +4,7 @@
  */
 package cas.xb3.adoptation.framework;
 
-import java.io.*; 
+import java.io.*;  
 import java.util.*;
 
 public class MainQ {
@@ -56,7 +56,7 @@ public class MainQ {
      PetHeapSort.sortHeap(pets);
      
      BufferedWriter outputWriter = null;
-     outputWriter = new BufferedWriter(new FileWriter("indices.txt"));
+     outputWriter = new BufferedWriter(new FileWriter("data/indices.txt"));
      for (String s : petsBreeds) {
     	 outputWriter.write(s);
     	 outputWriter.newLine();
