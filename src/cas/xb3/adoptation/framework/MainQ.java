@@ -50,14 +50,16 @@ public class MainQ {
 				pets.remove(i);
 			}
 		}
-		
-		for(int i = 0; i < pets.size(); i++){
-			if(questions.getType().equals("A") || questions.getType().equals("B") || questions.getType().equals("C")){
+		if(questions.getType().equals("A") || questions.getType().equals("B") || questions.getType().equals("C")){
+			for(int i = 0; i < pets.size(); i++){
 				if(!pets.get(i).getSpecies().equals("DOG")){
 					pets.remove(i);
 				}
 			}
-			else{
+		}
+		
+		else{
+			for(int i = 0; i < pets.size(); i++){
 				if(!pets.get(i).getSpecies().equals("CAT")){
 					pets.remove(i);
 				}
