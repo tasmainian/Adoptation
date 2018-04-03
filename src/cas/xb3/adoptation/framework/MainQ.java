@@ -41,7 +41,7 @@ public class MainQ {
 			System.out.println();
 		}
 		System.out.println();
-		//System.out.println(Arrays.toString(questions.getList()));
+		System.out.println(Arrays.toString(questions.getList()));
 
 		// ****************************ALGORITHMS IMPLEMENTATION***********************
 		ArrayList<petADT> pets = Parser.parse("data/Animal_Tag_DATA_2015_8.csv");
@@ -50,6 +50,7 @@ public class MainQ {
 				pets.remove(i);
 			}
 		}
+		
 		if(questions.getType().equals("A") || questions.getType().equals("B") || questions.getType().equals("C")){
 			for(int i = 0; i < pets.size(); i++){
 				if(!pets.get(i).getSpecies().equals("DOG")){
@@ -58,7 +59,7 @@ public class MainQ {
 			}
 		}
 		
-		else{
+		else {
 			for(int i = 0; i < pets.size(); i++){
 				if(!pets.get(i).getSpecies().equals("CAT")){
 					pets.remove(i);
@@ -110,8 +111,6 @@ public class MainQ {
 			petADT petOptions = pets.get(ind);
 		}
 
-		ArrayList<petADT> petsNew = pets;
-		PetHeapSortPrimary.sortHeap(petsNew);		
 		PetHeapSortPrimary.sortHeap(primBreed);
 		
 		String[] finalBreeds = new String[primBreed.size()];
@@ -137,8 +136,10 @@ public class MainQ {
 		else{
 			size = 3;
 		}
+		System.out.println("\nThe breeds that best suit you and are most in need are:");
 		for(int i = 0; i < size; i++) {
-			System.out.println("Breed: " + tas.get(i).getPrimBreed() + " Count: " + tas.get(i).getCount());
+			//System.out.println("Breed: " + tas.get(i).getPrimBreed() + " Count: " + tas.get(i).getCount());
+			System.out.println(i+1 +") "+ tas.get(i).getPrimBreed());
 		}
 		
 		for (int i = 0; i < primBreed.size(); i++) {
