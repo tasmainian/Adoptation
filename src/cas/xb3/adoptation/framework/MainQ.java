@@ -130,7 +130,14 @@ public class MainQ {
 		
 		finalPetADTHeapSort.sortHeap(tas);
 		Collections.reverse(tas);
-		for(int i = 0; i < 3; i++) {
+		int size;
+		if(tas.size()< 4){
+			size = tas.size();
+		}
+		else{
+			size = 3;
+		}
+		for(int i = 0; i < size; i++) {
 			System.out.println("Breed: " + tas.get(i).getPrimBreed() + " Count: " + tas.get(i).getCount());
 		}
 		
