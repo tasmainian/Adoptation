@@ -45,7 +45,24 @@ public class MainQ {
 
 		// ****************************ALGORITHMS IMPLEMENTATION***********************
 		ArrayList<petADT> pets = Parser.parse("data/Animal_Tag_DATA_2015_8.csv");
-
+		for(int i = 0; i < pets.size(); i++){
+			if(!pets.get(i).getStatus().equals("ACTIVE")){
+				pets.remove(i);
+			}
+		}
+		
+		for(int i = 0; i < pets.size(); i++){
+			if(questions.getType().equals("A") || questions.getType().equals("B") || questions.getType().equals("C")){
+				if(!pets.get(i).getSpecies().equals("DOG")){
+					pets.remove(i);
+				}
+			}
+			else{
+				if(!pets.get(i).getSpecies().equals("CAT")){
+					pets.remove(i);
+				}
+			}
+		}
 		// Loads all the pet breeds onto a string array
 		String[] petsBreeds = new String[pets.size()];
 		String[] petsPrimaryBreed = new String[pets.size()];
