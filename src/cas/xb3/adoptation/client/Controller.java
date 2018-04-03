@@ -12,18 +12,23 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class Controller {
 	
 	private ArrayList<petADT> originalPetData;
 	public ObservableList<petADT> oPetData;
+	
+	public static String test;
 	
 	// UI elements
 	@FXML private ToggleGroup searchGroup;
@@ -33,6 +38,7 @@ public class Controller {
 	@FXML private TableColumn<petADT, String> ageCol;
 	@FXML private TableColumn<petADT, String> colorCol;
 	@FXML private Button btnSort;
+	@FXML private Button btnMatchTest;
 	
 
 	@FXML
@@ -53,13 +59,33 @@ public class Controller {
 		
 		breedCol.setCellValueFactory(new PropertyValueFactory<petADT, String>("primaryBreed"));
 		genderCol.setCellValueFactory(new PropertyValueFactory<petADT, String>("sex"));
-		// TODO: some pets have age of 0 (less than 0 years, some don't have age setup at all)
 		ageCol.setCellValueFactory(new PropertyValueFactory<petADT, String>("yearsAge"));
 		colorCol.setCellValueFactory(new PropertyValueFactory<petADT, String>("primaryColour"));
 		
-		//petView.setSortPolicy(FXCollections.sort(oPetData)); <= change to our own sorting methods
+		
 		petView.setItems(oPetData);
 		
+	}
+	
+	public void showTestResults(ArrayList<petADT> results) {
+		oPetData.clear();
+		oPetData = FXCollections.observableArrayList(results);
+		petView.setItems(oPetData);
+	}
+	
+	@FXML
+	public void onMatchTestClick() {
+		try {
+		FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("MatchTestWindow.fxml"));
+        Scene newScene = new Scene(fxmlLoader.load(), 500, 300);
+        Stage newStage = new Stage();
+        newStage.setTitle("Adoptation Match Test");
+        newStage.setScene(newScene);
+        newStage.show();
+		} catch (Exception e) {
+			
+		}
 	}
 	
 	@FXML

@@ -7,8 +7,8 @@ public class heapSort {
 	 * @param x - input array
 	 * @param n - size of input array
 	 */	
-	public static void sortHeap (Comparable[] x, int n) {
-			
+	public static void sortHeap (String[] x) {
+		int n = x.length;
 		for (int i = n / 2; i >= 1; i--)
 			sink(x, i, n);
 		
@@ -24,7 +24,7 @@ public class heapSort {
 	 * @param i - index
 	 * @param n - size of input array
 	 */
-	private static void sink(Comparable[] x, int i, int n) {
+	private static void sink(String[] x, int i, int n) {
 	    	
 		while (2 * i <= n) {
 			int j = 2 * i;
@@ -52,6 +52,15 @@ public class heapSort {
 		obj[index1-1] = obj[index2-1];
 		obj[index2-1] = temp;
 	}
-	
+	/*
+	public static void main(String[] args) {
+
+        String array[] ={"f","a","c","b","g","d","e"};
+        sortHeap(array);
+
+        for (int i=0; i<array.length; i++) {
+        	System.out.println(array[i]);
+        }
+	}*/
 	
 }

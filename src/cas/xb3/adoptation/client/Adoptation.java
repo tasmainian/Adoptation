@@ -12,11 +12,16 @@ import javafx.stage.Stage;
  * <p>
  * This class contains the main method and handles all essential UI/initial program setup.
  * </p>
- * @author Owen McNeil, ...
+ * @author Owen McNeil
  * @version 1.0
  */
 public class Adoptation extends Application {
 	
+	public static Controller controller;
+	
+	public static Controller getController() {
+		return controller;
+	}
 	
 	public static void main(String args[]) {
 		launch(args);
@@ -24,10 +29,13 @@ public class Adoptation extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));
+		Parent root = loader.load();
+		controller = loader.getController();
 		primaryStage.setTitle("Adoptation");
 		primaryStage.setScene(new Scene(root, 800, 500));
 		primaryStage.show();
+		
 	}
 
 }

@@ -1,14 +1,26 @@
-Q:
-Is it an animal?
-Q:
-Does it hop?
-A:
-frog
-Q:
-Can it fly?
-A:
-bee
-A:
-dog
-A:
-computer
+Question:
+Do you prefer a dog over a cat (y/n)?
+Question:
+Are you outgoing(y/n)?
+Question:
+Do you live in a big living environment(y/n)?
+Answer:
+You're a Type A personality, big dogs are a best fit for you
+Answer:
+You're a Type B personality, mid sized dogs are a best fit for you
+Answer:
+You're a Type C personality, small dogs are a best fit for you
+Question:
+Are you a busy person(y/n)?
+Question:
+Are you energetic(y/n)?
+Answer:
+You're a Type D personality, hybrid cats are a best fit for you
+Answer:
+You're a Type E personality, domestic cats are a best fit for you
+Question:
+Do you mind fur(y/n)?
+Answer:
+You're a Type F personality, short hair/ hairless cats are a best fit for you
+Answer:
+You're a Type G personality, long hair cats are a best fit for you
