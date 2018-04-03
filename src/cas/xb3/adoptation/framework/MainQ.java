@@ -136,8 +136,10 @@ public class MainQ {
 		else{
 			size = 3;
 		}
+		System.out.println("\nThe breeds that best suit you and are most in need are:");
 		for(int i = 0; i < size; i++) {
-			System.out.println("Breed: " + tas.get(i).getPrimBreed() + " Count: " + tas.get(i).getCount());
+			//System.out.println("Breed: " + tas.get(i).getPrimBreed() + " Count: " + tas.get(i).getCount());
+			System.out.println(i+1 +") "+ tas.get(i).getPrimBreed());
 		}
 		
 	}
