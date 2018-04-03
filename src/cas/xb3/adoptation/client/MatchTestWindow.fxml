@@ -42,9 +42,14 @@
                      </font></TextArea>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="60.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Button fx:id="btnYes" mnemonicParsing="false" onAction="#onYesPress" prefHeight="58.0" prefWidth="113.0" style="-fx-background-color: #41CF13;" text="Yes">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="29.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnView" layoutX="117.0" layoutY="31.0" mnemonicParsing="false" onAction="#onViewPress" prefHeight="58.0" prefWidth="113.0" style="-fx-background-color: #41CF13;" text="View" visible="false">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="29.0" />
                      </font>

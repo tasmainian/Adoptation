@@ -141,5 +141,9 @@ public class MainQ {
 			System.out.println("Breed: " + tas.get(i).getPrimBreed() + " Count: " + tas.get(i).getCount());
 		}
 		
+		for (int i = 0; i < primBreed.size(); i++) {
+			System.out.println(primBreed.get(i).getPrimaryBreed());
+		}
+		
 	}
 }

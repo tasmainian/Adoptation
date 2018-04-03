@@ -7,25 +7,32 @@ import java.io.OutputStream;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import cas.xb3.adoptation.framework.TestParser;
 import cas.xb3.adoptation.framework.Tree;
+import cas.xb3.adoptation.framework.petADT;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.stage.Stage;
 
 public class MatchTestController {
 	
 	@FXML
-	private Button btnYes, btnNo;
+	private Button btnYes, btnNo, btnView;
 	@FXML
 	private TextArea txtArea;
 	
 	public static final String QUESTIONAIRE = "data/question.txt";
 	public static PipedInputStream input;
 	public static PipedOutputStream output;
+	private Tree questions;
 	
 	
 	public void appendText(String str) {
@@ -36,8 +43,16 @@ public class MatchTestController {
 	    			if (txtArea.getText().length() != 0 && txtArea.getText(txtArea.getText().length() - 1, txtArea.getText().length()).equals("?")) {
 	    				// last character is a question mark, can remove old question
 	    				txtArea.clear();
-	    			}
+	    			} 
 	    			txtArea.appendText(str);
+	    			if (str.contains("]")) {
+	    				// test is completed, list of breeds has been outputted
+	    				// hide voting buttons, show "view" button
+	    				btnYes.setVisible(false);
+	    				btnNo.setVisible(false);
+	    				btnView.setVisible(true);
+	    				
+	    			}
 	    		}
 	    });
 	}
@@ -68,6 +83,14 @@ public class MatchTestController {
 		Thread myThread = new Thread(myRunnable);
 		myThread.setDaemon(true);
 		myThread.start(); 
+	}
+	
+	@FXML
+	public void onViewPress() {
+		ArrayList<petADT> results = TestParser.parseResults(questions);
+		Adoptation.getController().showTestResults(results);
+		Stage stage = (Stage) btnYes.getScene().getWindow();
+		stage.close();
 	}
 
 	@FXML
@@ -100,7 +123,7 @@ public class MatchTestController {
 			
 			System.setIn(input);
 			
-			Tree questions = new Tree();
+			questions = new Tree();
 			
 			
 		     //loading the questions into the tree object
@@ -119,7 +142,6 @@ public class MatchTestController {
 		     }
 		     System.out.println();
 		     System.out.println(Arrays.toString(questions.getList()));
-			
 		}
 		
 	}

@@ -28,6 +28,8 @@ public class Controller {
 	private ArrayList<petADT> originalPetData;
 	public ObservableList<petADT> oPetData;
 	
+	public static String test;
+	
 	// UI elements
 	@FXML private ToggleGroup searchGroup;
 	@FXML private TableView<petADT> petView; 
@@ -63,6 +65,12 @@ public class Controller {
 		
 		petView.setItems(oPetData);
 		
+	}
+	
+	public void showTestResults(ArrayList<petADT> results) {
+		oPetData.clear();
+		oPetData = FXCollections.observableArrayList(results);
+		petView.setItems(oPetData);
 	}
 	
 	@FXML
