@@ -142,9 +142,10 @@ public class MainQ {
 			System.out.println(i+1 +") "+ tas.get(i).getPrimBreed());
 		}
 		
+		/*
 		for (int i = 0; i < primBreed.size(); i++) {
 			System.out.println(primBreed.get(i).getPrimaryBreed());
-		}
+		}*/
 		
 	}
 }
