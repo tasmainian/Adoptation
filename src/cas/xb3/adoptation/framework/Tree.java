@@ -11,6 +11,7 @@ public class Tree {
 	private Node root;
 	private Scanner c;
 	private String[] list;
+	private String type;
 	
 	public Tree() {
 		c = new Scanner(System.in);
@@ -44,25 +45,32 @@ public class Tree {
 			if ((root.text).equals("You're a Type A personality, big dogs are a best fit for you")){
 				String[] list = {"MASTIFF", "SHEEPDOG", "SIGHTHOUND"};
 				setList(list);
+				setType("A");
 			}
 			else if ((root.text).equals("You're a Type B personality, mid sized dogs are a best fit for you")){
 				String[] list = {"COLLIE", "HOUNDS", "MIX", "POINTER", "SETTER/RETRIEVE"};
-				setList(list);}
+				setList(list);
+				setType("B");}
 			else if ((root.text).equals("You're a Type C personality, small dogs are a best fit for you")){
 				String[] list = {"POODLE", "SPANIEL", "SPITZ", "TERRIER", "TOY"};
-				setList(list);}
+				setList(list);
+				setType("C");}
 			else if ((root.text).equals("You're a Type D personality, hybrid cats are a best fit for you")){
 				String[] list = {"MIX"};
-				setList(list);}
+				setList(list);
+				setType("D");}
 			else if ((root.text).equals("You're a Type E personality, domestic cats are a best fit for you")){
 				String[] list = {"MIX"};
-				setList(list);}
+				setList(list);
+				setType("E");}
 			else if ((root.text).equals("You're a Type F personality, short hair/ hairless cats are a best fit for you")){
 				String[] list = {"SHORTHAIR"};
-				setList(list);}
-			else if ((root.text).equals("You're a Type E personality, long hair cats are a best fit for you")){
+				setList(list);
+				setType("F");}
+			else if ((root.text).equals("You're a Type G personality, long hair cats are a best fit for you")){
 				String[] list = {"LONGHAIR"};
-				setList(list);}
+				setList(list);
+				setType("G");}
 		} else { //print out the question with (y/n)?
 			System.out.print(root.text);
 			String branchAns = c.nextLine();
@@ -89,6 +97,14 @@ public class Tree {
 	
 	public String[] getList(){
 		return this.list;
+	}
+	
+	public void setType(String type){
+		this.type = type;
+	}
+	
+	public String getType(){
+		return type;
 	}
 	
 }
